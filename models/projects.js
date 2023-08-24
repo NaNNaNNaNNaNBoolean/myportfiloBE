@@ -14,7 +14,7 @@ class Project {
     }
 
     static async getAll() {
-        const response = await db.query("SELECT id, project_name, project_subheading, project_date FROM projects ORDER BY project_date;");
+        const response = await db.query("SELECT id, project_name, project_subheading, project_date FROM projects ORDER BY project_date DESC;");
         return response.rows.map(p => new Project(p));
     }
 
